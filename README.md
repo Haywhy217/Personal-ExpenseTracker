@@ -1,8 +1,32 @@
-# React + Vite
+# Personal-ExpenseTracker
+## Description
+A personal expense tracker built with Django and React. It includes user authentication, expense management, a dashboard with reports, and budgeting features.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Setup  Instruction
 
-Currently, two official plugins are available:
+### Frontend (React)
+Create a react app
+  ``` bash
+  npm create vite@latest
+  project name - Expense Tracker
+  filename --
+  package name --
+  choose react
+  choose Javascript
+  Type cd expense tracker
+  npm install
+  npm run dev
+```
+### Create  Components
+Create the Login.jsx, Login.css, Register.jsx, Register.css, LandingPage.jsx, LandingPage.css in the components.
+style using css
+connect the different css to the jsx.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### create the various routes
+the register route
+the login route 
+the landinpage route which is the default route and link the register and login to it.
+
+#connect to the backend
+
+
