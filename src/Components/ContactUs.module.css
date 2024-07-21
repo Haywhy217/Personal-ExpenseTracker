@@ -1,0 +1,141 @@
+/* General Container */
+
+.container {
+  background-color: white;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+  height: auto;
+ color: #1a1f4f;
+  border: 1px solid white;
+  box-sizing: border-box; 
+  overflow: hidden;
+  margin: 0 auto;
+}
+/* Section 1 */
+.section1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+}
+
+.textinputs {
+  width: 50%; /* Adjust to allow space for the quote */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 39px;
+  line-height: 47px;
+  color: #1a1f4f; /* Heading text color */
+}
+
+.para1 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1a1f4f;
+}
+.para3{
+  color: white;
+}
+
+.quote {
+  width: 50%; 
+  background: #1a1f4f;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.quote blockquote {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-left: 5px solid #1a1f4f;
+  padding-left: 30px;
+}
+
+.heading2 {
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.para2 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #B5B3B3;
+}
+
+.testimonial {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.testimonialpara {
+  padding-left: 10px;
+}
+
+.testimonialpara2 {
+  color: #ffffff;
+}
+
+/* Inputs Section */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 50%;
+}
+
+.nameinput {
+  display: flex;
+  gap: 15px;
+  width: 50%;
+}
+
+.inputs input,
+.inputs textarea {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #ffffff; /* Input background color */
+  color: #000000; /* Input text color */
+}
+
+.inputs input:focus,
+.inputs textarea:focus {
+  outline: none;
+  border-color: #1a1f4f;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  background: #1a1f4f;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 10px;
+}

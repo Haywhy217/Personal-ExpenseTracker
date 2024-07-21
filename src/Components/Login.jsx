@@ -1,29 +1,69 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; 
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate, Link } from 'react-router-dom';
+import styles from './Login.module.css'
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); 
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-
-  const handleSubmit = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    navigate.push('/dashboard'); 
+
+    const loginData = {
+      username,
+      password,
+    };
+
+    try {
+      const response = await fetch('http://localhost:8000/users/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to login');
+      }
+
+      navigate('/dashboard');
+    } catch (error) {
+      setError('Login failed. Please try again.');
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('http://your-django-backend-url/api/logout/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to logout');
+      }
+
+      navigate('/'); // Redirect to the landing page
+    } catch (error) {
+      setError('Logout failed. Please try again.');
+    }
   };
 
   return (
-    <div className="container">
+    <div className={styles.loginctn}>
       <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleLogin}>
         <div>
-          <label>Email:</label>
+          <label>Username:</label>
           <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
           />
         </div>
@@ -38,7 +78,11 @@ const Login = () => {
         </div>
         <button type="submit">Login</button>
       </form>
-      <p>Don't have an account? <Link to="/register">Register</Link></p>
+      {error && <p className={styles.error}>{error}</p>}
+      <button className={styles.logoutButton} onClick={handleLogout}>Logout</button>
+      <p className={styles.register}>
+        Don’t have an account? <Link to="/register" className={styles.registerLink}>Register here</Link>
+      </p>
     </div>
   );
 };

@@ -1,0 +1,72 @@
+
+.loginctn {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  color: #1a1f4f;
+}
+
+.loginctn h2 {
+  text-align: center;
+}
+
+.loginctn form {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginctn label {
+  margin-top: 10px;
+}
+
+.loginctn input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.loginctn button {
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.loginctn button[type="submit"] {
+  background-color:#1a1f4f ;
+  color: white;
+}
+
+.logoutButton {
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1a1f4f;
+  color: white;
+  cursor: pointer;
+}
+
+.register {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.registerLink {
+  color: #ffa500;
+  text-decoration: none;
+}
+
+.registerLink:hover {
+  text-decoration: underline;
+}
+
