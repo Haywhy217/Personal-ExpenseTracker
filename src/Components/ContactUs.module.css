@@ -1,20 +1,19 @@
-/* General Container */
+
 
 .container {
-  background-color: white;
+  background-color: #1a1f4f;
   padding: 50px;
   display: flex;
   flex-direction: column;
   gap: 50px;
   width: 100%;
   height: auto;
- color: #1a1f4f;
+ color: white;
   border: 1px solid white;
   box-sizing: border-box; 
   overflow: hidden;
   margin: 0 auto;
 }
-/* Section 1 */
 .section1 {
   display: flex;
   flex-direction: row;
@@ -25,7 +24,7 @@
 }
 
 .textinputs {
-  width: 50%; /* Adjust to allow space for the quote */
+  width: 100%; /* Adjust to allow space for the quote */
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -35,14 +34,14 @@
   font-weight: 700;
   font-size: 39px;
   line-height: 47px;
-  color: #1a1f4f; /* Heading text color */
+  color: white; 
 }
 
 .para1 {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 24px;
-  color: #1a1f4f;
+  color: white;
 }
 .para3{
   color: white;
@@ -50,7 +49,7 @@
 
 .quote {
   width: 50%; 
-  background: #1a1f4f;
+  background: #ffa300;
   padding: 30px;
   border-radius: 10px;
 }
@@ -66,14 +65,14 @@
 .heading2 {
   font-weight: 700;
   font-size: 20px;
-  color: #ffffff;
+  color: #1a1f4f;
 }
 
 .para2 {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #B5B3B3;
+  color: #1a1f4f;
 }
 
 .testimonial {
@@ -90,7 +89,7 @@
   color: #ffffff;
 }
 
-/* Inputs Section */
+
 .inputs {
   display: flex;
   flex-direction: column;
@@ -133,8 +132,8 @@
   align-items: center;
   width: 200px;
   height: 50px;
-  background: #1a1f4f;
-  color: #ffffff;
+  background: #fff;
+  color: #1a1f4f;
   cursor: pointer;
   border-radius: 10px;
   margin-top: 10px;

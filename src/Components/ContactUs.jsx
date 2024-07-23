@@ -9,21 +9,7 @@ const ContactUs = () => {
         <div className={styles.textinputs}>
           <h1 className={styles.heading}>Reach Out to Us</h1>
           <p className={styles.para1}>Fill out this form if you have any question</p>
-        </div>
-        <div className={styles.quote}>
-          <blockquote>
-            <h1 className={styles.heading2}>"User-Friendly App"</h1>
-            <p className={styles.para2}>Trackly has really helped me in tracking my expenses <br /> the App is user friendly</p>
-            <div className={styles.testimonial}>
-              <div className={styles.testimonialpara}>
-                <h3 className={styles.para3}>Olayinka Bucknor</h3>
-                <p className={styles.testimonialpara2}>- Accountant</p>
-              </div>
-            </div>
-          </blockquote>
-        </div>
-      </div>
-      <div className={styles.inputs}>
+          <div className={styles.inputs}>
         <div className={styles.nameinput}>
           <div className={styles.input}>
             <label htmlFor="firstName"> First Name </label>
@@ -48,6 +34,21 @@ const ContactUs = () => {
         </div>
         <div className={styles.submit}>Send Message</div>
       </div>
+        </div>
+        <div className={styles.quote}>
+          <blockquote>
+            <h1 className={styles.heading2}>"User-Friendly App"</h1>
+            <p className={styles.para2}>Trackly has really helped me in tracking my expenses <br /> the App is user friendly</p>
+            <div className={styles.testimonial}>
+              <div className={styles.testimonialpara}>
+                <h3 className={styles.para3}>Olayinka Bucknor</h3>
+                <p className={styles.testimonialpara2}>- Accountant</p>
+              </div>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+      
     </div>
   );
 }

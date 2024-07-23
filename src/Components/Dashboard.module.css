@@ -1,0 +1,25 @@
+/* Dashboard.module.css */
+
+.dashboardContainer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.chartContainer {
+  max-width: 800px;
+  margin: auto;
+}
+
+.messageContainer {
+  margin-top: 1rem;
+}
+
+.praiseMessage {
+  color: green;
+  font-weight: bold;
+}
+
+.encouragementMessage {
+  color: red;
+  font-weight: bold;
+}

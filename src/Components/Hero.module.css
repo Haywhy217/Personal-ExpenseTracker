@@ -1,0 +1,20 @@
+
+  .Hero {
+    background-color: #1a1f4f;
+    text-align: center;
+    padding: 70px 20px;
+    width: 100vw; 
+    color:white;
+    margin: 0; 
+ 
+}
+.Hero h3{
+  font-size: 18px;
+  color: #ffa300;
+  font-style: oblique;
+  padding-top: 0;
+}
+
+.Hero p{
+ font-size: 20px;
+}

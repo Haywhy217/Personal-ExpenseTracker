@@ -29,7 +29,7 @@ const Login = () => {
         throw new Error('Failed to login');
       }
 
-      navigate('/dashboard');
+      navigate('/trackly');
     } catch (error) {
       setError('Login failed. Please try again.');
     }
@@ -48,7 +48,7 @@ const Login = () => {
         throw new Error('Failed to logout');
       }
 
-      navigate('/'); // Redirect to the landing page
+      navigate('/'); 
     } catch (error) {
       setError('Logout failed. Please try again.');
     }

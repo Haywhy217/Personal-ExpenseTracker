@@ -3,7 +3,7 @@
   width: 300px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #1a1f4f;
   border-radius: 10px;
   background-color: white;
   color: #1a1f4f;
@@ -20,6 +20,8 @@
 
 .loginctn label {
   margin-top: 10px;
+  display: block;
+  font-weight: bold;
 }
 
 .loginctn input {
@@ -64,6 +66,8 @@
 .registerLink {
   color: #ffa500;
   text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .registerLink:hover {
