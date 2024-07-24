@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './Feature.module.css';
 import FeatCard from './FeatCard';
-
+import { Link } from 'react-router-dom';
 function Features() {
   return (
+    <section id='features'>
     <div id={styles.Fctn}>
       <h2>Our Features</h2>
       <p>Discover the powerful features that make our expense tracking app unique and user-friendly.</p>
@@ -14,8 +15,11 @@ function Features() {
         <FeatCard title={'Continuous Improvement'} description={'We are committed to continuous improvement. Our team regularly releases updates with new features and enhancements based on user feedback.'}/>
         </div>
         <p>Ready to experience these features? Sign up now and take your productivity to the next level!</p>
-        <button onClick={() => window.location.href = '/register'}>Get Started</button>
-    </div>
+        <button><Link to="/register" className={styles.linkButton}>
+        Get Started
+      </Link></button>
+        </div>
+        </section>
   );
 }
 

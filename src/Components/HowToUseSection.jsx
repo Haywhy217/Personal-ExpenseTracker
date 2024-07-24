@@ -3,6 +3,7 @@ import styles from './HowToUse.module.css';
 
 const HowToUse = () => {
   return (
+    <section id='how-to-use'>
     <div className={styles.howToUseContainer}>
       <h2>How to Use Our Expense Tracking App</h2>
 
@@ -24,16 +25,16 @@ const HowToUse = () => {
       <h3>Adding Transactions</h3>
       <h4>Adding an Expense or Income</h4>
       <ul>
-        <li>Click on button to add a new transaction.</li>
+        <li>Click on button to "+" add a new transaction.</li>
         <li>Select "Expense" or "Income".</li>
         <li>Enter the amount, choose a category, and add any relevant notes.</li>
-        <li>Click "Save" to record the transaction.</li>
+        <li>Click "Add" to record the transaction.</li>
       </ul>
 
       <h3>Viewing Transaction History</h3>
       <ul>
         <li>Go to the "Transactions" tab to view a list of all your transactions.</li>
-        <li>You can filter transactions by date, category, or type (expense or income).</li>
+        
       </ul>
 
       <h3>Monitoring Your Balance</h3>
@@ -43,8 +44,9 @@ const HowToUse = () => {
       </ul>
 
       <h3>Need Help?</h3>
-      <p>If you encounter any issues or have any questions, please visit our support page or contact us directly through the app.</p>
+      <p>If you encounter any issues or have any questions,contact us directly through the app.</p>
     </div>
+    </section>
   );
 }
 

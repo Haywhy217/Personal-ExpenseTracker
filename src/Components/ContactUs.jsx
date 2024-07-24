@@ -4,6 +4,7 @@ import styles from './ContactUs.module.css';
 
 const ContactUs = () => {
   return (
+    <section id='contact-us'>
     <div className={styles.container}>
       <div className={styles.section1}>
         <div className={styles.textinputs}>
@@ -50,6 +51,7 @@ const ContactUs = () => {
       </div>
       
     </div>
+    </section>
   );
 }
 

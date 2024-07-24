@@ -5,6 +5,8 @@ import styles from '../Components/LandingPage.module.css';
 import Features from '../Components/FeatureSection';
 import ContactUs from '../Components/ContactUs';
 import Footer from '../Components/Footer';
+import HowToUse from '../Components/HowToUseSection';
+
 
 const LandingPage = () => {
   return (
@@ -13,6 +15,7 @@ const LandingPage = () => {
  <NavBar />
  <HeroSection/>
  <Features/>
+ <HowToUse/>
  <ContactUs/>
 <Footer/>
     </>

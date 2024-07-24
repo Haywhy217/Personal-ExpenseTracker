@@ -13,6 +13,8 @@
   box-sizing: border-box; 
   overflow: hidden;
   margin: 0 auto;
+  margin-top: 70px;
+  padding-top: 70px;
 }
 .section1 {
   display: flex;
