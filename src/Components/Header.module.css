@@ -1,0 +1,21 @@
+.head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1a1f4f;
+  color: white;
+}
+
+.welcomeMessage {
+  font-size: 22px;
+}
+
+.userIcon  svg{
+  display: flex;
+  align-items: center;
+}
+.userIcon svg {
+  width: 32px;   
+  height: 32px;  
+}

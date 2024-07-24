@@ -1,0 +1,36 @@
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  color: white;
+  font-size: larger;
+}
+
+.balanceCard {
+  background-color: #1a1f4f;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 40%; 
+  margin: 0 auto;
+  margin-top: 40px;
+  height: auto;
+}
+
+.incomeExpenseContainer {
+  display: flex;
+  gap: 20px;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.incomeCard, .expenseCard {
+  background-color: #1a1f4f;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 30%; 
+  margin: 0 auto;
+}

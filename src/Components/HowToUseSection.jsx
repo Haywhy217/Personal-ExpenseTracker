@@ -42,7 +42,6 @@ const HowToUse = () => {
         <li>Your current balance is displayed at the top of the main screen.</li>
         <li>This balance is automatically updated based on your recorded expenses and income.</li>
       </ul>
-
       <h3>Need Help?</h3>
       <p>If you encounter any issues or have any questions,contact us directly through the app.</p>
     </div>
