@@ -25,7 +25,7 @@ const Modal = ({ title, description, amount, date, type, setTitle, setDescriptio
             placeholder="Description" 
             value={description} 
             onChange={(e) => setDescription(e.target.value)} 
-            required 
+             
           />
           <input 
             type="number" 

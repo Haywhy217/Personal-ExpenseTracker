@@ -1,0 +1,41 @@
+.transactionSummary {
+  padding: 10px;
+  border-right: 5px solid #ffa300;
+  width: calc(50% - 20px); 
+  box-sizing: border-box; 
+  font-size: 20px;
+  color: white;
+  margin: 0 auto;
+}
+
+.monthFilter {
+  margin-bottom: 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+
+  padding: 8px;
+  text-align: left;
+  border: none;
+}
+
+.viewDetailsButton,
+.viewMoreButton,
+.closeDetailsButton {
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.transactionDetails {
+  margin-top: 20px;
+  
+  padding: 10px;
+  background-color: #f9f9f9;
+}
