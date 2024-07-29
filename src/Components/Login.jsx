@@ -17,7 +17,7 @@ const Login = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:8000/users/login/', {
+      const response = await fetch('http://localhost:8000/user/login/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const Login = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://your-django-backend-url/api/logout/', {
+      const response = await fetch('http://localhost:8000/user/logout/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

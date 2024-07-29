@@ -1,6 +1,6 @@
 .transactionSummary {
   padding: 10px;
-  border-right: 5px solid #ffa300;
+  border-right: 5px solid white;
   width: calc(50% - 20px); 
   box-sizing: border-box; 
   font-size: 20px;
@@ -10,6 +10,10 @@
 
 .monthFilter {
   margin-bottom: 10px;
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 .table {
@@ -31,11 +35,12 @@
   margin-top: 10px;
   padding: 5px 10px;
   cursor: pointer;
+  
 }
 
 .transactionDetails {
   margin-top: 20px;
-  
+  color: #1a1f4f;
   padding: 10px;
-  background-color: #f9f9f9;
+  background-color: white;
 }

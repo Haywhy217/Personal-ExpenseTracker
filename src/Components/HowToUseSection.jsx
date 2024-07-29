@@ -25,7 +25,7 @@ const HowToUse = () => {
       <h3>Adding Transactions</h3>
       <h4>Adding an Expense or Income</h4>
       <ul>
-        <li>Click on button to "+" add a new transaction.</li>
+        <li>Click on button  "Add"  to add a new transaction.</li>
         <li>Select "Expense" or "Income".</li>
         <li>Enter the amount, choose a category, and add any relevant notes.</li>
         <li>Click "Add" to record the transaction.</li>

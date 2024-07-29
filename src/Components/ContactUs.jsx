@@ -1,8 +1,50 @@
 
-import React from 'react';
+import React,{useState} from 'react';
 import styles from './ContactUs.module.css';
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    subject: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/contact/', { // Ensure the URL is correct
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      if (response.ok) {
+        alert(result.message || 'Message sent successfully');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          subject: '',
+          email: '',
+          message: '',
+        }); 
+      } else {
+        alert(result.errors || 'An error occurred while sending the message');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while sending the message');
+    }
+  };
+
   return (
     <section id='contact-us'>
     <div className={styles.container}>
