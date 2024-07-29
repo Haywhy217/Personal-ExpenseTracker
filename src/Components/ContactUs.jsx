@@ -19,7 +19,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/contact/', { // Ensure the URL is correct
+      const response = await fetch('http://localhost:8000/contact_us/contact/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,8 +30,8 @@ const ContactUs = () => {
       if (response.ok) {
         alert(result.message || 'Message sent successfully');
         setFormData({
-          firstName: '',
-          lastName: '',
+          first_name: '',
+          last_name: '',
           subject: '',
           email: '',
           message: '',
