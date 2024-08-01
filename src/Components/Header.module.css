@@ -2,15 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 20px 20px;
   background-color: #1a1f4f;
   color: white;
+  justify-content: space-between;
 }
 
 .welcomeMessage {
-  font-size: 22px;
+  font-size: 16px;
+  margin-left: 20px;
+ 
 }
-
+.userSection{
+  display: flex;
+  align-items: center;
+}
 .userIcon  svg{
   display: flex;
   align-items: center;
@@ -18,4 +24,23 @@
 .userIcon svg {
   width: 32px;   
   height: 32px;  
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.logoutButton, .dashboardButton {
+  background-color: #ffa300;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.logoutButton:hover, .dashboardButton:hover {
+  background-color: rgb(38, 38, 124);
 }

@@ -29,7 +29,7 @@ const Login = () => {
         throw new Error('Failed to login');
       }
 
-      navigate('/trackly');
+      navigate('/home');
     } catch (error) {
       setError('Login failed. Please try again.');
     }

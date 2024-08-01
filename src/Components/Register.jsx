@@ -27,14 +27,17 @@ const Register = () => {
       });
 
       if (response.ok) {
+        const data = await response.json();
+        alert(`Registration successful! ${data.message}`); 
         navigate('/login');
       } else {
-        console.error('Registration failed. Please try again.');
+        const data = await response.json();
+        console.error('Registration failed:', data.error); 
       }
     } catch (error) {
       console.error('An error occurred:', error);
     }
-  };
+  }; // <--- Added closing bracket here
 
   return (
     <div className={styles.container}>

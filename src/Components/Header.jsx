@@ -1,21 +1,52 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import styles from './Header.module.css';
 
+
 const Header = () => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  const navigate = useNavigate(); 
+
+  
+
+  const handleLogout = async () => {
+    try {
+      await fetch('http://localhost:8000/user/logout/', {
+        method: 'POST',
+        credentials: 'include', 
+      });
+
+      localStorage.removeItem('user');
+      
+      navigate('/'); 
+    } catch (error) {
+      console.error('Logout failed:', error);
+      
+    }
+  };
+
+  const goToDashboard = () => {
+    navigate('/dashboard'); 
+  };
+
   return (
-   <header className={styles.head}>
-   <div className={styles.welcomeMessage}>
-      <h1>Welcome, </h1>
-   </div>
-   <div className={styles.userIcon}>
-   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-</svg>
-
-   </div>
-
-   </header>
-  )
+    <header className={styles.head}>
+      <div className={styles.userSection}> 
+      <div className={styles.userIcon}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+      </div>
+      <div className={styles.welcomeMessage}>
+        <h1>Welcome, {user ? user.username : 'Guest'} </h1>
+      </div>
+      </div>
+      <div className={styles.buttons}>
+        <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>
+        <button onClick={goToDashboard} className={styles.dashboardButton}>View Dashboard</button>
+      </div>
+    </header>
+  );
 }
 
-export default Header
+export default Header;

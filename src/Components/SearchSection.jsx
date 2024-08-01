@@ -32,8 +32,8 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
 
   const handleDelete = async (expense) => {
     try {
-      // Replace with your API endpoint
-      await fetch(`YOUR_BACKEND_URL/expenses/${expense.id}`, {
+      
+      await fetch(`http://127.0.0.1:8000/expenses/delete_expense/${expense.id}`, {
         method: 'DELETE',
       });
 
@@ -50,7 +50,7 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
 
   const handleSaveEdit = async () => {
     try {
-      await fetch(`YOUR_BACKEND_URL/expenses/${currentEdit.id}`, {
+      await fetch(`http://127.0.0.1:8000/expenses/update_expense/${currentEdit.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
