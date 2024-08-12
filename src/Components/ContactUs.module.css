@@ -102,7 +102,7 @@
 .nameinput {
   display: flex;
   gap: 15px;
-  width: 50%;
+  width: 100%;
 }
 
 .inputs input,
@@ -120,23 +120,57 @@
 .inputs textarea:focus {
   outline: none;
   border-color: #1a1f4f;
+  width: 100%;
 }
 
 .input {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 15px;
+  padding: 10px;
+ 
 }
 
 .submit {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 50%;
+  justify-content: center;
   height: 50px;
   background: #fff;
   color: #1a1f4f;
   cursor: pointer;
   border-radius: 10px;
   margin-top: 10px;
+  margin-left: 50px;
 }
+@media screen and (max-width:1050px){
+  .section1{
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+   
+  }
+  .textinputs{
+    align-items: center;
+  }
+ 
+  }
+  @media screen and (max-width:670px){
+ .container{
+  width: 100%;
+  text-align: center;
+ }
+ .quote{
+  width: 100%;
+ }
+.inputs{
+  width: 100%;
+}
+ .submit{
+  width: 80%;
+  text-align: center;
+  margin: 0  auto;
+ }
+  }

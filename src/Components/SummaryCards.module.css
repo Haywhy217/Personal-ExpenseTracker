@@ -34,3 +34,15 @@
   width: 30%; 
   margin: 0 auto;
 }
+
+@media screen and (max-width:670px){
+
+  .incomeExpenseContainer{
+    width: 100%;
+  }
+}
+@media screen  and (max-width:780px){
+  .incomeExpenseContainer{
+    width: 100%;
+  }
+}

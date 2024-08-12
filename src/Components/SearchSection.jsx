@@ -43,23 +43,24 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
     }
   };
 
-  const handleEdit = (expense) => {
-    setIsEditing(true);
-    setCurrentEdit(expense);
-  };
-
   const handleSaveEdit = async () => {
     try {
-      await fetch(`http://127.0.0.1:8000/expenses/update_expense/${currentEdit.id}`, {
+      const response = await fetch(`http://127.0.0.1:8000/expenses/update_expense/${currentEdit.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(currentEdit),
       });
-
-      setSearchResults(searchResults.map(item => 
-        item.id === currentEdit.id ? currentEdit : item
+  
+      if (!response.ok) {
+        throw new Error('Failed to update transaction');
+      }
+  
+      const updatedTransaction = await response.json(); 
+  
+      setSearchResults(searchResults.map(item =>
+        item.id === currentEdit.id ? updatedTransaction : item
       ));
       setIsEditing(false);
       setCurrentEdit(null);
@@ -67,7 +68,7 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
       console.error('Error updating transaction:', error);
     }
   };
-
+  
   return (
     <div className={styles.searchSection}>
       <input
@@ -79,8 +80,9 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
       <select
         value={searchType}
         onChange={(e) => setSearchType(e.target.value)}
-        className={styles.searchInput}
+        className={styles.searchInput1}
       >
+
         <option value="">All</option>
         <option value="income">Income</option>
         <option value="expense">Expense</option>
@@ -130,39 +132,39 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
         </div>
       )}
       {isEditing && (
-        <div className={styles.editSection}>
-          <h3>Edit Transaction</h3>
-          <input
-            type="text"
-            value={currentEdit.title}
-            onChange={(e) => setCurrentEdit({ ...currentEdit, title: e.target.value })}
-            className={styles.searchInput}
-          />
-          <input
-            type="text"
-            value={currentEdit.description}
-            onChange={(e) => setCurrentEdit({ ...currentEdit, description: e.target.value })}
-            className={styles.searchInput}
-          />
-          <input
-            type="number"
-            value={currentEdit.amount}
-            onChange={(e) => setCurrentEdit({ ...currentEdit, amount: parseFloat(e.target.value) })}
-            className={styles.searchInput}
-          />
-          <select
-            value={currentEdit.type}
-            onChange={(e) => setCurrentEdit({ ...currentEdit, type: e.target.value })}
-            className={styles.searchInput}
-          >
-            <option value="income">Income</option>
-            <option value="expense">Expense</option>
-          </select>
-          <button onClick={handleSaveEdit} className={styles.saveButton}>Save</button>
-          <button onClick={() => setIsEditing(false)} className={styles.cancelButton}>Cancel</button>
-        </div>
-      )}
-    </div>
+  <div className={styles.editSection}>
+    <h3>Edit Transaction</h3>
+    <input
+      type="text"
+      value={currentEdit.title}
+      onChange={(e) => setCurrentEdit({ ...currentEdit, title: e.target.value })}
+      className={styles.searchInput}
+    />
+    <input
+      type="text"
+      value={currentEdit.description}
+      onChange={(e) => setCurrentEdit({ ...currentEdit, description: e.target.value })}
+      className={styles.searchInput}
+    />
+    <input
+      type="number"
+      value={currentEdit.amount}
+      onChange={(e) => setCurrentEdit({ ...currentEdit, amount: parseFloat(e.target.value) })}
+      className={styles.searchInput}
+    />
+    <select
+      value={currentEdit.type}
+      onChange={(e) => setCurrentEdit({ ...currentEdit, type: e.target.value })}
+      className={styles.searchInput}
+    >
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+    <button onClick={handleSaveEdit} className={styles.saveButton}>Save</button>
+    <button onClick={() => setIsEditing(false)} className={styles.cancelButton}>Cancel</button>
+  </div>
+)}
+</div>
   );
 };
 

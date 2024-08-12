@@ -8,10 +8,10 @@
   border-bottom: 1px solid white;
   position: fixed;
    top: 0;
-  left: 0;
-  right: 0; 
-height: auto;
+   margin: 0 auto;
+  height: 100px;
   cursor: pointer;
+  
 }
 
 .logo {
@@ -38,8 +38,96 @@ height: auto;
   font-size: 22px;
   transition: color 0.3s;
 }
-
 .navlinks a:hover {
   color: #ddd;
+}
+
+@media screen and (max-width:670px){ 
+ 
+.logo{
+  padding-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+.menuToggle{
+  display: block;
+  height: 60px;
+  font-size: 40px;
+  color: #fff;
+  width: 100%;
+  background-color: #1a1f4f;
+ text-align: right;
+ cursor: pointer;
+  overflow: hidden;
+ 
+
+ 
+ 
+}
+
+ .logo{
+  margin-bottom: 20px;
+  justify-content: center;
+  
+} 
+.navbar ul {
+  background: #1a1f4f;
+  overflow: hidden;
+  height: 0; 
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  left: 0;
+  height: auto;
+  display: none;
+  
+}
+
+.navlinks.open{
+display: block;
+
+}
+
+.navlinks{
+  display: block;
+  margin: 0;
+  width: 100%;
+  z-index: 1000;
+  left: 0;
+  padding: 0;
+  top: 0;
+}
+
+.navlinks li{ 
+  float: none;
+  width: 100%;
+ 
+  
+}
+
+.navlinks li a{
+ border-radius: 10px;
+  padding: 8px;
+  display: block;
+  margin: 0;
+  text-align: left;
+  color: #fff;
+  background: #1a1f4f;
+  text-decoration: none;
+}
+
+.navlinks li a:hover{
+  background-color: #ffa300;
+}
+
+
+.navbar{
+  display: block;
+  height: auto;
+  position: relative;
+  background-color: #1a1f4f;
+  overflow: hidden;
+}
 }
 

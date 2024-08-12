@@ -4,7 +4,10 @@ import styles from './Header.module.css';
 
 
 const Header = () => {
-  const user = JSON.parse(localStorage.getItem('user'));
+ 
+  const userData = JSON.parse(localStorage.getItem('user'));
+
+
   const navigate = useNavigate(); 
 
   
@@ -38,12 +41,12 @@ const Header = () => {
         </svg>
       </div>
       <div className={styles.welcomeMessage}>
-        <h1>Welcome, {user ? user.username : 'Guest'} </h1>
+      <h1>Hi {userData && userData.username ? userData.username : 'there'}, 
+      </h1>
       </div>
       </div>
       <div className={styles.buttons}>
         <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>
-        <button onClick={goToDashboard} className={styles.dashboardButton}>View Dashboard</button>
       </div>
     </header>
   );

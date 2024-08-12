@@ -11,6 +11,7 @@
   width: 350px;
   color: white;
   background-color: #1a1f4f;
+ 
 }
 
 .para{
@@ -20,4 +21,10 @@
   line-height: 30px;
   width: 290px;
   margin: 0 auto;
+}
+
+@media screen and (max-width:670px){
+.featCtn{
+  width: 95%;
+}
 }

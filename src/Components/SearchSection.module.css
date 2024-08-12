@@ -79,3 +79,46 @@
   border: 2px solid #1a1f4f;
   cursor: pointer;
 }
+
+@media screen and (max-width:670px){
+ .searchSection{
+  width: 90%;
+ }
+ .table th,
+.table td {
+  display: flex;
+  /* flex-direction: column; */
+}
+.table{
+  display: flex;
+  
+}
+.searchInput{
+ width: fit-content;
+}
+}
+@media screen  and (max-width:780px){
+  /* .searchSection{
+    width: 90%;
+   } */
+   .table th,
+  .table td {
+    display: flex;
+    /* flex-direction: column; */
+  }
+  .table{
+    display: flex;
+    /* flex-direction: column; */
+    
+  }
+  .searchInput{
+   width: fit-content;
+   padding: 9px;
+   font-size: 20px;
+  }
+  .searchInput1{
+   padding: 9px;
+   font-size: 20px;
+  }
+ 
+}
