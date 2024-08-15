@@ -9,7 +9,6 @@ const Register = () => {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
     const requestData = {
       email,
       username,
@@ -24,13 +23,13 @@ const Register = () => {
         },
         body: JSON.stringify(requestData)
       });
-  
+
       if (response.ok) {
         const data = await response.json();
-        alert(`Registration successful! ${data.message}`); 
-        navigate('/login');
+        alert(`Registration successful! ${data.message}`);
+        navigate('/login'); 
       } else {
-        const errorText = await response.text(); 
+        const errorText = await response.text();
         console.error('Registration failed:', errorText);
         alert(`Registration failed: ${errorText}`);
       }

@@ -22,20 +22,25 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(loginData),
+        body: JSON.stringify({ username, password }),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to login');
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('token', data.token);
+        alert('Login successful!');
+        navigate('/home');
+      } else {
+        throw new Error('Invalid username or password');
       }
-
-      navigate('/home');
     } catch (error) {
-      setError('Login failed. Please try again.');
+      alert(error.message);
     }
   };
-
+  
   const handleLogout = async () => {
+    console.log('Logging out...');
+  
     try {
       const response = await fetch('http://localhost:8000/user/logout/', {
         method: 'POST',
@@ -43,14 +48,18 @@ const Login = () => {
           'Content-Type': 'application/json',
         },
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to logout');
+  
+      if (response.ok) {
+        console.log('Logout successful!');
+        localStorage.removeItem('token');
+        navigate('/'); // Redirect to the landing page
+      } else {
+        console.error('Logout failed:', response.status);
+        alert('Logout failed. Please try again later.');
       }
-
-      navigate('/'); 
     } catch (error) {
-      setError('Logout failed. Please try again.');
+      console.error('An error occurred:', error);
+      alert('An unexpected error occurred. Please try again later.');
     }
   };
 
