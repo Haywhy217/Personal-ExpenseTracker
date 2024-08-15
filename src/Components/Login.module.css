@@ -1,12 +1,13 @@
 
 .loginctn {
-  width: 300px;
+  width: 270px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #1a1f4f;
   border-radius: 10px;
   background-color: white;
   color: #1a1f4f;
+  height: fit-content;
 }
 
 .loginctn h2 {

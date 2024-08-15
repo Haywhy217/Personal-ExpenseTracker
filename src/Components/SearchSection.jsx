@@ -32,25 +32,40 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
 
   const handleDelete = async (expense) => {
     try {
-      
-      await fetch(`http://127.0.0.1:8000/expenses/delete_expense/${expense.id}`, {
+      await fetch('http://127.0.0.1:8000/expenses/delete_expense/', {
         method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title: expense.title,
+          date: expense.date
+        })
       });
-
-      setSearchResults(searchResults.filter(item => item.id !== expense.id));
+  
+      setSearchResults(searchResults.filter(item =>
+        item.title !== expense.title || item.date !== expense.date
+      ));
     } catch (error) {
       console.error('Error deleting transaction:', error);
     }
   };
+  
 
   const handleSaveEdit = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/expenses/update_expense/${currentEdit.id}`, {
+      const response = await fetch('http://127.0.0.1:8000/expenses/update_expense/', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(currentEdit),
+        body: JSON.stringify({
+          title: currentEdit.title,
+          description: currentEdit.description,
+          amount: currentEdit.amount,
+          date: currentEdit.date,
+          type: currentEdit.type
+        }),
       });
   
       if (!response.ok) {
@@ -60,7 +75,7 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
       const updatedTransaction = await response.json(); 
   
       setSearchResults(searchResults.map(item =>
-        item.id === currentEdit.id ? updatedTransaction : item
+        item.title === currentEdit.title && item.date === currentEdit.date ? updatedTransaction : item
       ));
       setIsEditing(false);
       setCurrentEdit(null);
@@ -69,6 +84,7 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
     }
   };
   
+
   return (
     <div className={styles.searchSection}>
       <input

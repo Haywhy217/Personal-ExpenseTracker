@@ -7,16 +7,15 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const requestData = {
       email,
       username,
       password
     };
-
+  
     try {
       const response = await fetch('http://localhost:8000/user/register/', {
         method: 'POST',
@@ -25,19 +24,22 @@ const Register = () => {
         },
         body: JSON.stringify(requestData)
       });
-
+  
       if (response.ok) {
         const data = await response.json();
         alert(`Registration successful! ${data.message}`); 
         navigate('/login');
       } else {
-        const data = await response.json();
-        console.error('Registration failed:', data.error); 
+        const errorText = await response.text(); 
+        console.error('Registration failed:', errorText);
+        alert(`Registration failed: ${errorText}`);
       }
     } catch (error) {
       console.error('An error occurred:', error);
+      alert('An unexpected error occurred. Please try again later.');
     }
-  }; // <--- Added closing bracket here
+  };
+  
 
   return (
     <div className={styles.container}>
