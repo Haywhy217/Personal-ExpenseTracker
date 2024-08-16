@@ -50,6 +50,11 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
       console.error('Error deleting transaction:', error);
     }
   };
+ 
+  const handleEdit = (expense) => {
+    setIsEditing(true);
+    setCurrentEdit(expense);
+  };
   
 
   const handleSaveEdit = async () => {
@@ -72,7 +77,7 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
         throw new Error('Failed to update transaction');
       }
   
-      const updatedTransaction = await response.json(); 
+      const updatedTransaction = await response.json();
   
       setSearchResults(searchResults.map(item =>
         item.title === currentEdit.title && item.date === currentEdit.date ? updatedTransaction : item
@@ -81,9 +86,9 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
       setCurrentEdit(null);
     } catch (error) {
       console.error('Error updating transaction:', error);
+      alert('Error updating transaction: ' + error.message);
     }
   };
-  
 
   return (
     <div className={styles.searchSection}>
@@ -110,20 +115,20 @@ const SearchSection = ({ searchDate, setSearchDate, searchType, setSearchType, e
             <tr>
               <th>Date</th>
               <th>Title</th>
-              <th>Description</th>
+              {/* <th>Description</th>
               <th>Amount</th>
-              <th>Type</th>
+              <th>Type</th> */}
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {searchResults.map((expense, index) => (
               <tr key={index}>
-                <td>{new Date(expense.date).toLocaleDateString('en-GB')}</td>
+                {/* <td>{new Date(expense.date).toLocaleDateString('en-GB')}</td> */}
                 <td>{expense.title}</td>
-                <td>{expense.description}</td>
+                {/* <td>{expense.description}</td> */}
                 <td>₦{expense.amount.toFixed(2)}</td>
-                <td>{expense.type}</td>
+                {/* <td>{expense.type}</td>  */}
                 <td>
                   <button className={styles.editButton} onClick={() => handleEdit(expense)}>Edit</button>
                   <button className={styles.deleteButton} onClick={() => handleDelete(expense)}>Delete</button>

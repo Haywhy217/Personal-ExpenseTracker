@@ -2,10 +2,11 @@
 
 .container {
   display: flex;
-  justify-content: space-between; 
+  /* justify-content: space-between;  */
   padding: 10px;
   background-color: #1a1f4f;
-  top: 60px;
+  /* top: 60px; */
+  overflow: hidden;
 }
 
 @media screen and (max-width:670px){
